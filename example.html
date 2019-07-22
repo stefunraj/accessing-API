@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>log in form</h1>
+<form>
+<table>
+    <tr>
+        <td>
+            Email:
+        </td>
+        <td>
+            <input type:"text" placeholder="Email" email="" id="Email" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            password:
+        </td>
+        <td>
+            <input type:"password" placeholder="password" password="" value="" id="password" required>
+        </td>
+    </tr>
+</table>
+<button type="button" onclick="loadDoc()">log in</button>
+</form>
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://openweathermap.org/data/2.5/find?callback=jQuery19103982383370892224_1563793375872&q=chennai&type=like&sort=population&cnt=30&appid=b6907d289e10d714a6e88b30761fae22&_=1563793375874", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
